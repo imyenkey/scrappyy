@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Blank Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="icon" type="image/png" href="icons/dark-mode-icon.png" id="dark-mode-favicon" disabled>
+</head>
+<body>
+  <div class="container">
+    <!-- Hidden Menu Button -->
+    <button id="menu-toggle" class="menu-toggle">
+      <img src="icons/menu-icon.png" alt="Menu" width="20" height="20">
+    </button>
+
+    <!-- Hidden Menu -->
+    <div id="hidden-menu" class="hidden-menu">
+      <ul>
+        <li><a href="#versioning" id="versioning-link">Version History</a></li>
+      </ul>
+    </div>
+
+    <div class="toolbar">
+      <span id="word-count">Words: 0 | Characters: 0</span>
+      <div class="actions">
+        <button id="export-txt" title="Export as TXT">
+          <img src="icons/export-txt-icon.png" alt="Export as TXT" width="20" height="20">
+        </button>
+        <button id="export-md" title="Export as MD">
+          <img src="icons/export-md-icon.png" alt="Export as MD" width="20" height="20">
+        </button>
+        <button id="export-pdf" title="Export as PDF">
+          <img src="icons/export-pdf-icon.png" alt="Export as PDF" width="20" height="20">
+        </button>
+        <button id="theme-toggle" title="Toggle Dark Mode">
+          <img src="icons/dark-mode-icon.png" alt="Toggle Dark Mode" width="20" height="20">
+        </button>
+      </div>
+    </div>
+    <textarea id="editor" placeholder="Start typing here..."></textarea>
+  </div>
+
+  <!-- Versioning Page (Hidden by Default) -->
+  <div id="versioning-page" class="versioning-page">
+    <div class="versioning-content">
+      <h2>Version History</h2>
+      <ul>
+        <li><strong>v1.0.0</strong> - Initial release with basic text editing and export options (TXT, MD, PDF).</li>
+        <li><strong>v1.1.0</strong> - Added dark mode and word count features.</li>
+        <li><strong>v1.2.0</strong> - Added responsive design for mobile devices.</li>
+        <li><strong>v1.3.0</strong> - Added standard margins for PDF export.</li>
+        <li><strong>v1.4.0</strong> - Added hidden menu and versioning page.</li>
+        <li><strong>v1.5.0</strong> - Added persistent dark mode preference using localStorage.</li>
+      </ul>
+      <button id="close-versioning" class="close-button">Close</button>
+    </div>
+  </div>
+
+  <!-- jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

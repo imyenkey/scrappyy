@@ -1,0 +1,263 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-screen layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+/* Container for the textarea and toolbar */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Toolbar styling */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toolbar .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar button {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.toolbar button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Icon styling */
+.toolbar button img {
+  width: 20px;
+  height: 20px;
+  filter: invert(0);
+  transition: filter 0.3s;
+}
+
+body.dark-mode .toolbar button img {
+  filter: invert(1);
+}
+
+/* Menu Icon Styling */
+.menu-toggle img {
+  width: 20px;
+  height: 20px;
+  filter: invert(0); /* Default for light mode */
+  transition: filter 0.3s;
+}
+
+body.dark-mode .menu-toggle img {
+  filter: invert(1); /* Invert for dark mode */
+}
+
+/* Textarea styling */
+#editor {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 1.6;
+  background-color: transparent;
+  resize: none;
+  padding: 20px;
+  color: inherit;
+}
+
+#editor::placeholder {
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .toolbar .actions {
+    gap: 8px;
+  }
+
+  .toolbar button {
+    padding: 6px;
+  }
+
+  .toolbar button img {
+    width: 18px;
+    height: 18px;
+  }
+
+  #editor {
+    font-size: 16px;
+    padding: 15px;
+  }
+}
+
+/* Tooltip styling */
+button {
+  position: relative;
+}
+
+button:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Hidden Menu */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hidden-menu {
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1000;
+}
+
+.hidden-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.hidden-menu ul li {
+  margin: 10px 0;
+}
+
+.hidden-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.hidden-menu ul li a:hover {
+  color: #007bff;
+}
+
+body.dark-mode .hidden-menu {
+  background: #333;
+  border-color: #555;
+}
+
+body.dark-mode .hidden-menu ul li a {
+  color: #f5f5f5;
+}
+
+body.dark-mode .hidden-menu ul li a:hover {
+  color: #007bff;
+}
+
+/* Versioning Page */
+.versioning-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.versioning-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .versioning-content {
+  background: #333;
+  color: #f5f5f5;
+}
+
+.versioning-content h2 {
+  margin-top: 0;
+}
+
+.versioning-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.versioning-content ul li {
+  margin: 10px 0;
+}
+
+.close-button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.close-button:hover {
+  background: #0056b3;
+}
